@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using StarChart.Data;
 
@@ -36,6 +35,11 @@ namespace StarChart.Controllers
             return Ok(celestialObject);
         }
 
+        /// <summary>
+        /// Get celestial objects by name.
+        /// </summary>
+        /// <param name="name">Name of the celestial object</param>
+        /// <returns>All the celestial object having the name searched by</returns>
         [HttpGet("{name}")]
         public IActionResult GetByName(string name)
         {
@@ -53,6 +57,10 @@ namespace StarChart.Controllers
             return Ok(celestialObjects);
         }
 
+        /// <summary>
+        /// Gets all celestial objects.
+        /// </summary>
+        /// <returns>Celestail objects</returns>
         [HttpGet(Name = "GetAll")]
         public IActionResult GetAll()
         {
